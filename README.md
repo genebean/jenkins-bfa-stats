@@ -20,3 +20,22 @@ SERVER = 'mongodb://mongodb.example.com:27017/'
 pip install pymongo
 python get-stats-for-yesterday.py
 ```
+
+## Development
+
+Below is an example of a single entry in the list of failure causes:
+
+```python
+Single dailyFailureCause
+
+{
+    '_id': ObjectId('sc = 546d33efe4b0220750244af7'),
+    'name': 'Apt failure - hash sum mismatch',
+    'description': 'When using the \'apt\' package manager, the job may fail with "hash sum mismatch". This can occur when using a caching proxy, or a mirror in an inconsistent state. The job should be retried, and the content mirrored locally.',
+    'comment': '',
+    'categories': ['apt', 'network', 'debian', 'ubuntu'],
+    'indications': [{'@class': 'com.sonyericsson.jenkins.plugins.bfa.model.indication.BuildLogIndication', 'pattern': '.*Hash Sum mismatch.*'}],
+    'modifications': [{'user': 'branan', 'time': datetime.datetime(2014, 11, 17, 22, 42, 4, 410000)}],
+    'lastOccurred': datetime.datetime(2019, 8, 6, 14, 1, 2, 955000)
+}
+```
